@@ -1,11 +1,15 @@
 package com.qatros.cobamodule
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.qatros.core.base.BaseActivity
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+class MainActivity : BaseActivity() {
+
+    override fun onReady(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_main)
+    }
+
+    override fun observePhase() {
+
     }
 }

@@ -37,6 +37,8 @@ android {
         enabled true
     }
 
+    dynamicFeatures = [':movie']
+
 //    kotlinOptions {
 //        jvmTarget = '1.8'
 //    }

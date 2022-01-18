@@ -9,3 +9,4 @@ dependencyResolutionManagement {
 rootProject.name = "Coba Module"
 include ':app'
 include ':core'
+include ':movie'
