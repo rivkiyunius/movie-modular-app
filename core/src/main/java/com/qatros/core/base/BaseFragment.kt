@@ -17,7 +17,7 @@ abstract class BaseFragment: Fragment() {
         observePhase()
     }
 
-    protected fun<T> LiveData<T>.onResult(action: (T) -> Unit){
+    protected fun<T> LiveData<T>.observeResult(action: (T) -> Unit){
         observe(this@BaseFragment, Observer { action(it) })
     }
 

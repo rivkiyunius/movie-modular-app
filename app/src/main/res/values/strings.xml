@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Coba Module</string>
     <string name="title_movie">Movie</string>
+    <string name="movies">Movies</string>
+    <string name="tv">Tv</string>
+    <string name="title_tv">Tv</string>
+    <string name="title_home">Home</string>
 </resources>
