@@ -1,4 +1,4 @@
-package com.qatros.movie.ui
+package com.qatros.movie.ui.list
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -12,7 +12,7 @@ import javax.inject.Inject
  * @author rivki
  * Created 17/01/22 at 20.47
  */
-@HiltViewModel
+
 class MovieViewModel @Inject constructor(private var repository: MovieRepository): BaseViewModel() {
     private val _nowPlayingList = MutableLiveData<List<MoviesResponse>>()
     val nowPlayingList: LiveData<List<MoviesResponse>> get() = _nowPlayingList

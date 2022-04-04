@@ -1,6 +1,6 @@
 package com.qatros.cobamodule
 
-import android.app.Application
+import com.google.android.play.core.splitcompat.SplitCompatApplication
 import dagger.hilt.android.HiltAndroidApp
 
 /**
@@ -9,13 +9,4 @@ import dagger.hilt.android.HiltAndroidApp
  */
 
 @HiltAndroidApp
-class AppModule: Application() {
-    override fun onCreate() {
-        super.onCreate()
-        instance = this
-    }
-
-    companion object{
-        var instance: AppModule? = null
-    }
-}
+class AppModule: SplitCompatApplication()

@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/includeMovieGraph">
+    android:id="@+id/nav_main"
+    app:startDestination="@id/nav_movie">
+    <include-dynamic
+        android:id="@+id/nav_movie"
+        app:moduleName="movie"
+        app:graphResName="nav_graph_movie"
+        app:graphPackage="${applicationId}.movie"/>
 
     <include-dynamic
-        android:id="@+id/includeMovieGraph"
-        app:moduleName="movie"
-        app:graphResName="nav_graph_movie"/>
+        android:id="@+id/nav_tv"
+        app:moduleName="tv"
+        app:graphResName="nav_graph_tv"
+        app:graphPackage="${applicationId}.tv"/>
 </navigation>

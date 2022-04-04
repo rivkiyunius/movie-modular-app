@@ -1,9 +1,3 @@
-//plugins {
-//    id 'com.android.application'
-//    id 'kotlin-android'
-//    id 'dagger.hilt.android.plugin'
-//    id 'kotlin-kapt'
-//}
 apply plugin: "kotlin-android"
 apply plugin: "dagger.hilt.android.plugin"
 apply plugin: "kotlin-kapt"
@@ -44,38 +38,53 @@ android{
         exclude 'META-INF/maven/com.google.dagger/dagger/pom.properties'
     }
 
+    viewBinding{
+        enabled = true
+    }
+
+    hilt {
+        enableAggregatingTask = true
+    }
+
     dependencies {
         implementation fileTree(include: ['*.jar'], dir: 'libs')
-        api androidDependencies.coreKtx
-        api androidDependencies.appCompat
-        api androidDependencies.material
-        api androidDependencies.constraintLayout
+        implementation androidDependencies.coreKtx
+        implementation androidDependencies.appCompat
+        implementation androidDependencies.material
+        implementation androidDependencies.constraintLayout
 
         api hiltDep.hiltAndroid
-        api hiltDep.hiltKapt
+        implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03'
+        implementation dagger.dagger
+        implementation dagger.daggerAndroid
+        kapt hiltDep.hiltKapt
 
-        api network.retrofit
-        api network.retrofitConverterGson
-        api network.retrofitAdapterRxJava3
-        api network.gson
-        api network.okhttp
-        api network.logInterceptor
+        implementation network.retrofit
+        implementation network.retrofitConverterGson
+        implementation network.retrofitAdapterRxJava3
+        implementation network.gson
+        implementation network.okhttp
+        implementation network.logInterceptor
 
-        api lifecycle.lifecycleKapt
-        api lifecycle.viewModelKtx
-        api lifecycle.livedataKtx
-        api lifecycle.runtimeKtx
-        api lifecycle.activityKtx
+        implementation lifecycle.lifecycleKapt
+        implementation lifecycle.viewModelKtx
+        implementation lifecycle.livedataKtx
+        implementation lifecycle.runtimeKtx
+        implementation lifecycle.activityKtx
 
-        api navigation.navigationFragmentKtx
-        api navigation.navigationUi
-        api navigation.dynamicFeatures
+        implementation navigation.navigationFragmentKtx
+        implementation navigation.navigationUi
+        implementation navigation.dynamicFeatures
 
-        api rx.rxAndroid
-        api rx.rxKotlin
+        implementation rx.rxAndroid
+        implementation rx.rxKotlin
 
-        api image.glide
-        api image.annotationProcessor
+        implementation image.glide
+        implementation image.annotationProcessor
+
+        implementation playcore.playcore
+
+        implementation other.guava
 
         testImplementation 'junit:junit:4.+'
         androidTestImplementation 'androidx.test.ext:junit:1.1.3'
